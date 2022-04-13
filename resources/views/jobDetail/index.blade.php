@@ -42,23 +42,21 @@
       <thead>
         <tr>
           <th scope="col"></th>
-          <th scope="col">SN</th>
-          <th scope="col">Job id</th>
-          <th scope="col">Job Name</th>
-          <th scope="col">City</th>
+          @foreach($columns as $column)
+          <th>{{$column}}</th>
+          @endforeach
           <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
         @foreach($jobDetails as $jobDetail)
         <tr>
-          <td><input type="checkbox" name="job_id_checkbox[]" value="{{$jobDetail->id}}"></td>
-          <td>{{$jobDetail->id}}</td>
-          <td>{{$jobDetail->job_id}}</td>
-          <td>{{$jobDetail->job_name}}</td>
-          <td>{{$jobDetail->city}}</td>
+          <td><input type="checkbox" name="job_id_checkbox[]" value="{{$jobDetail->getKey()}}"></td>
+          @foreach($columns as $column)
+          <td>{{$jobDetail->$column}}</td>
+          @endforeach
           <td>
-            <form action="{{route('job-detail.destroy', $jobDetail->id)}}" onclick="return confirm('Are you sure?')" method="POST" style="display: inline">
+            <form action="{{route('job-detail.destroy', $jobDetail->getKey())}}" onclick="return confirm('Are you sure?')" method="POST" style="display: inline">
               @csrf
               @method('DELETE')
               <input type="submit" value="Delete" class="btn btn-sm btn-danger">
