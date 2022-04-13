@@ -1,0 +1,41 @@
+{
+    "name": "stability/easytools",
+    "description": ":package_description",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Author Name",
+            "email": "author@email.com",
+            "homepage": "http://author.com"
+        }
+    ],
+    "homepage": "https://github.com/stability/easytools",
+    "keywords": ["Laravel", "EasyTools"],
+    "require": {
+        "illuminate/support": "~9"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~9.0",
+        "orchestra/testbench": "~9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Stability\\EasyTools\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Stability\\EasyTools\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Stability\\EasyTools\\EasyToolsServiceProvider"
+            ],
+            "aliases": {
+                "EasyTools": "Stability\\EasyTools\\Facades\\EasyTools"
+            }
+        }
+    }
+}
