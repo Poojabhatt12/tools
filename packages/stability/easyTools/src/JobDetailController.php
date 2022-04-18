@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Stability\EasyTools;
 
 use App\Models\JobDetail;
 use Illuminate\Http\Request;

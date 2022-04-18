@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5f0117d6f8718eac4c0d15a52a0d2631",
+    "content-hash": "2942772d01aea879274a5fe5572a639d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2848,6 +2848,63 @@
                 }
             ],
             "time": "2021-09-25T23:10:38+00:00"
+        },
+        {
+            "name": "stability/easytools",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "C:/laragon/www/tools/packages/stability/easyTools",
+                "reference": "4193f9d61b9593437df6107c4152ec54e5b4e9d7"
+            },
+            "require": {
+                "illuminate/support": "~8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~8.0",
+                "phpunit/phpunit": "~8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Stability\\EasyTools\\EasyToolsServiceProvider"
+                    ],
+                    "aliases": {
+                        "EasyTools": "Stability\\EasyTools\\Facades\\EasyTools"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Stability\\EasyTools\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Stability\\EasyTools\\Tests\\": "tests"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Author Name",
+                    "email": "author@email.com",
+                    "homepage": "http://author.com"
+                }
+            ],
+            "description": ":package_description",
+            "homepage": "https://github.com/stability/easytools",
+            "keywords": [
+                "EasyTools",
+                "Laravel"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": false
+            }
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -7967,7 +8024,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "stability/easytools": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

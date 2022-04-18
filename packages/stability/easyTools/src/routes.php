@@ -1,5 +1,13 @@
 <?php
 
-Route::get('/getpackage', function(){
+ use Stability\EasyTools\JobDetailController;
+
+Route::get('packagetest', function(){
     return "this is visible from easytoolservice package";
 });
+Route::get('/', function () {
+    return view('main');
+});
+Route::get('/job-detail', [JobDetailController::class, 'index'])->name('job-detail.index');
+Route::delete('/job-detail/{jobDetail}', [JobDetailController::class, 'destroy'])->name('job-detail.destroy');
+Route::delete('/job-detailDeleteSelected', [JobDetailController::class, 'deleteSelected']);
