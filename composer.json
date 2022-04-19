@@ -10,7 +10,8 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
-        "laravel/tinker": "^2.5"
+        "laravel/tinker": "^2.5",
+        "stability/easytools": "dev-master"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
@@ -63,7 +64,7 @@
     "repositories": {
         "stability/easytools": {
             "type": "path",
-            "url": "C:\\laragon\\www\\tools\\packages/stability/easyTools",
+            "url": "C:\\Users\\user\\Desktop\\stability_project\\tools/packages/stability/easyTools",
             "options": {
                 "symlink": true
             }

@@ -14,7 +14,7 @@ class EasyToolsServiceProvider extends ServiceProvider
     public function boot(): void
     {
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'stability');
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'stability');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'easyTools');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadRoutesFrom(__DIR__.'/routes.php');
 
