@@ -2,6 +2,7 @@
 
 namespace Stability\EasyTools;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 class EasyToolsServiceProvider extends ServiceProvider
@@ -14,9 +15,10 @@ class EasyToolsServiceProvider extends ServiceProvider
     public function boot(): void
     {
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'stability');
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'stability');
-        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'stability');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadRoutesFrom(__DIR__.'/routes.php');
+        // Route::model('jobDetail', Stability\EasyTools\JobDetail::class);
 
         // Publishing is only necessary when using the CLI.
         if ($this->app->runningInConsole()) {

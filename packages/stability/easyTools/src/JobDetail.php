@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace Stability\EasyTools;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -13,7 +13,8 @@ class JobDetail extends Model
 
     protected $fillable = ['job_id', 'job_name', 'city'];
 
-    public function searchJobs(){
+    public function searchJobs()
+    {
         $searchTerm = request()->get('search_job_name');
         $cityTerm = request()->get('search_city');
 
@@ -24,8 +25,7 @@ class JobDetail extends Model
         } else {
             $jobDetails = JobDetail::paginate(10);
         }
-        
+
         return $jobDetails;
     }
-
 }

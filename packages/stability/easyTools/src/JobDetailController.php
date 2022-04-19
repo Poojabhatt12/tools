@@ -2,10 +2,11 @@
 
 namespace Stability\EasyTools;
 
-use App\Models\JobDetail;
+// use Stability\EasyTools\Models\JobDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
+use Stability\EasyTools\JobDetail;
 
 class JobDetailController extends Controller
 {
@@ -18,17 +19,12 @@ class JobDetailController extends Controller
     {
         $jobDetails = $jobDetail->searchJobs();
         $columns = Schema::getColumnListing('job_details');
-        return view('jobDetail.index', compact('jobDetails','columns'));
+        return view("stability::jobDetail.index", compact('jobDetails', 'columns'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\jobDetail  $jobDetail
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(JobDetail $jobDetail)
+    public function destroy($jId)
     {
+        $jobDetail = JobDetail::find($jId);
         $jobDetail->delete();
         return back();
     }
